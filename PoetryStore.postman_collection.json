@@ -1,0 +1,80 @@
+{
+  "info": {
+    "name": "Poetry Store API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "getPoets",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "http://localhost:4000/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"{ getPoets { poet_code first_name surname } }\"}"
+        }
+      }
+    },
+    {
+      "name": "getPoems",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "http://localhost:4000/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"{ getPoems { poem_code poem_title poet_code } }\"}"
+        }
+      }
+    },
+    {
+      "name": "getPoetPoem (SP)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "http://localhost:4000/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"{ getPoetPoem { poet_code first_name surname poem_code poem_title } }\"}"
+        }
+      }
+    },
+    {
+      "name": "createPoet",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "http://localhost:4000/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"mutation { createPoet(first_name: \\\"Sor\\\", surname: \\\"Juana\\\", address: \\\"CDMX\\\", postcode: \\\"06000\\\", telephone_number: \\\"55-1234\\\") { poet_code first_name surname } }\"}"
+        }
+      }
+    },
+    {
+      "name": "updateCustomer",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "http://localhost:4000/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"mutation { updateCustomer(customer_code: 1, address: \\\"Av. Nueva 999\\\") { customer_code first_name address } }\"}"
+        }
+      }
+    },
+    {
+      "name": "deletePoemPublication",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "http://localhost:4000/",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"query\":\"mutation { deletePoemPublication(poem_code: 1, publication_code: 3) }\"}"
+        }
+      }
+    }
+  ]
+}
